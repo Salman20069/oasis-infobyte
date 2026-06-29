@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 - Task 4: Login Authentication</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #e9ecef; display: flex; justify-content: center; align-items: center; height: 100vh; margin:0;}
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; max-width: 350px; }
+        h3 { margin-top: 0; text-align: center; color: #333; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #28a745; border: none; color: white; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .toggle-link { text-align: center; margin-top: 15px; font-size: 14px; color: #007bff; cursor: pointer; }
+        .hidden { display: none; }
+        .secure-page { background: #d4edda; color: #155724; padding: 20px; border-radius: 5px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div id="registerBox" class="card">
+    <h3>Create Account</h3>
+    <input type="text" id="regUser" placeholder="Choose Username">
+    <input type="password" id="regPass" placeholder="Choose Password">
+    <button onclick="register()">Register</button>
+    <div class="toggle-link" onclick="showForm('login')">Already have an account? Login</div>
+</div>
+
+<div id="loginBox" class="card hidden">
+    <h3>Login</h3>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div class="toggle-link" onclick="showForm('register')">Need an account? Register</div>
+</div>
+
+<div id="securedBox" class="card hidden secure-page">
+    <h3>Welcome Authorized User!</h3>
+    <p>You have successfully unlocked the authenticated route dashboard panel views.</p>
+    <button onclick="logout()" style="background:#dc3545;">Logout</button>
+</div>
+
+<script>
+    // In-memory array simulating a backend registration base database setup
+    let database = [];
+
+    function showForm(type) {
+        document.getElementById('registerBox').classList.add('hidden');
+        document.getElementById('loginBox').classList.add('hidden');
+        document.getElementById('securedBox').classList.add('hidden');
+
+        if(type === 'register') document.getElementById('registerBox').classList.remove('hidden');
+        if(type === 'login') document.getElementById('loginBox').classList.remove('hidden');
+        if(type === 'secured') document.getElementById('securedBox').classList.remove('hidden');
+    }
+
+    function register() {
+        const u = document.getElementById('regUser').value.trim();
+        const p = document.getElementById('regPass').value.trim();
+
+        if(!u || !p) return alert("Fill in all missing credential entry forms.");
+        if(database.find(user => user.username === u)) return alert("Username already taken!");
+
+        database.push({username: u, password: p});
+        alert("Registration complete! Please log in.");
+        
+        document.getElementById('regUser').value = '';
+        document.getElementById('regPass').value = '';
+        showForm('login');
+    }
+
+    function login() {
+        const u = document.getElementById('loginUser').value.trim();
+        const p = document.getElementById('loginPass').value.trim();
+
+        const userAccount = database.find(user => user.username === u && user.password === p);
+
+        if(userAccount) {
+            document.getElementById('loginUser').value = '';
+            document.getElementById('loginPass').value = '';
+            showForm('secured');
+        } else {
+            alert("Invalid account configuration username or mismatching password sequence rules.");
+        }
+    }
+
+    function logout() {
+        showForm('login');
+    }
+</script>
+
+</body>
+</html>
