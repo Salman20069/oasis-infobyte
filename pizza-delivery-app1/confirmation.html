@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Confirmation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="login-container">
+
+<h1>🎉 Order Confirmed</h1>
+
+<p>Your order has been placed successfully.</p>
+
+<h3 id="customerName"></h3>
+
+<h3 id="customerPhone"></h3>
+
+<h3 id="customerAddress"></h3>
+
+<a href="home.html">
+
+<button>Back to Home</button>
+
+</a>
+
+</section>
+
+<script>
+
+let customer=JSON.parse(localStorage.getItem("customer"));
+
+document.getElementById("customerName").innerHTML="Name : "+customer.name;
+
+document.getElementById("customerPhone").innerHTML="Phone : "+customer.phone;
+
+document.getElementById("customerAddress").innerHTML="Address : "+customer.address;
+
+</script>
+
+</body>
+</html>

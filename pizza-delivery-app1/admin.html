@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>🍕 Admin Dashboard</h1>
+
+</header>
+
+<section class="featured">
+
+<h2>Today's Orders</h2>
+
+<div class="pizza-card">
+
+<h3>Total Orders</h3>
+
+<h1 id="orders"></h1>
+
+</div>
+
+</section>
+
+<script>
+
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+document.getElementById("orders").innerHTML=cart.length;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Menu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🍕 Pizza Delivery</div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="index.html">Logout</a>
+    </nav>
+</header>
+
+<section class="featured">
+
+<h2>Our Pizza Menu</h2>
+
+<div class="pizza-container">
+
+<div class="pizza-card">
+<img src="images/pizza1.jpg">
+<h3>Margherita</h3>
+<p>₹199</p>
+<button onclick="addToCart('Margherita',199)">Add to Cart</button>
+</div>
+
+<div class="pizza-card">
+<img src="images/pizza2.jpg">
+<h3>Veg Supreme</h3>
+<p>₹299</p>
+<button onclick="addToCart('Veg Supreme',299)">Add to Cart</button>
+</div>
+
+<div class="pizza-card">
+<img src="images/pizza3.jpg">
+<h3>Pepperoni</h3>
+<p>₹399</p>
+<button onclick="addToCart('Pepperoni',399)">Add to Cart</button>
+</div>
+
+<div class="pizza-card">
+<img src="images/pizza1.jpg">
+<h3>Cheese Burst</h3>
+<p>₹349</p>
+<button onclick="addToCart('Cheese Burst',349)">Add to Cart</button>
+</div>
+
+<div class="pizza-card">
+<img src="images/pizza2.jpg">
+<h3>Farm House</h3>
+<p>₹329</p>
+<button onclick="addToCart('Farm House',329)">Add to Cart</button>
+</div>
+
+<div class="pizza-card">
+<img src="images/pizza3.jpg">
+<h3>Chicken BBQ</h3>
+<p>₹449</p>
+<button onclick="addToCart('Chicken BBQ',449)">Add to Cart</button>
+</div>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

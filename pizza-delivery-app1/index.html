@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Delivery App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🍕 Pizza Delivery</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+<img src="images/pizza1.jpg" alt="Pizza">
+<h2>Margherita</h2>
+<p>₹199</p>
+<button onclick="addCart('Margherita',199)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/pizza2.jpg" alt="Pizza">
+<h2>Veg Supreme</h2>
+<p>₹299</p>
+<button onclick="addCart('Veg Supreme',299)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/pizza3.jpg" alt="Pizza">
+<h2>Pepperoni</h2>
+<p>₹399</p>
+<button onclick="addCart('Pepperoni',399)">Add to Cart</button>
+</div>
+
+</div>
+
+<section class="cart">
+
+<h2>Your Cart</h2>
+
+<ul id="cartItems"></ul>
+
+<h3>Total : ₹<span id="total">0</span></h3>
+
+<button onclick="placeOrder()">Place Order</button>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

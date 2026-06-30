@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🍕 Pizza Delivery</div>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="checkout.html">Checkout</a>
+</nav>
+
+</header>
+
+<section class="featured">
+
+<h2>Your Cart</h2>
+
+<table border="1" width="70%" align="center">
+
+<thead>
+
+<tr>
+
+<th>Pizza</th>
+
+<th>Price</th>
+
+</tr>
+
+</thead>
+
+<tbody id="cartTable">
+
+</tbody>
+
+</table>
+
+<h2>Total : ₹<span id="total">0</span></h2>
+
+<a href="checkout.html">
+
+<button>Proceed to Checkout</button>
+
+</a>
+
+</section>
+
+<script src="script.js"></script>
+
+<script>
+
+displayCart();
+
+</script>
+
+</body>
+
+</html>
